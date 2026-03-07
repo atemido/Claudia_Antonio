@@ -66,8 +66,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
+  padding-top: 15px;
+  padding-bottom: 30px;
   background-color: #ffffff;
   width: 100%;
 }
@@ -120,5 +120,6 @@ body {
   letter-spacing: 0.15em;
   color: var(--taupe);
 }
+
 
 
