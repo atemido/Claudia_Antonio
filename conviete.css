@@ -1,0 +1,99 @@
+/* =============================================
+   Wedding Invite — styles.css
+   ============================================= */
+
+:root {
+  --cream: #ffffff; /*#faf8f6*/
+  --taupe: rgb(145, 144, 144); /*#b5a899*/
+  --deep: rgb(145, 144, 144); /*#6b5c52*/
+  --font-display: 'Cinzel', serif;
+  --font-body: ','Cormorant Garamond serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--cream);
+  max-width: 430px;   /* phone-width cap on wider screens */
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* ---- Photos ---- */
+.photo-block {
+  width: 100%;
+  line-height: 0; /* removes gap below img */
+}
+
+.wedding-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---- Location section ---- */
+.location-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*padding: 2.4rem 1.5rem;*/
+  /*gap: 1rem;*/
+  background-color: var(--cream);
+}
+
+.divider-line {
+  width: 60px;
+  height: 1px;
+  background-color: var(--taupe);
+}
+
+.location-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin: 0;
+}
+
+/* ---- Map link / icon ---- */
+.map-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--deep);
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.map-link:hover,
+.map-link:active {
+  opacity: 0.65;
+  transform: translateY(-2px);
+}
+
+.map-icon {
+  width: 30px;
+  height: 40px;
+  color: var(--deep);
+}
+
+.map-text {
+  /*font-family: var(--font-body);*/
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  /*text-transform: uppercase;*/
+  color: var(--taupe);
+}
