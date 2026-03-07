@@ -10,54 +10,55 @@
   --font-body: 'Cormorant Garamond', serif;
 }
 
-/* Hard reset — must come AFTER bootstrap to override it */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
+/* Force full bleed on Chrome Android */
 html {
   margin: 0 !important;
   padding: 0 !important;
-  width: 100%;
+  width: 100vw !important;
+  max-width: 100% !important;
   overflow-x: hidden;
+  background-color: #ffffff;
 }
 
 body {
-  background-color: var(--cream);
   margin: 0 !important;
   padding: 0 !important;
-  width: 100%;
+  width: 100vw !important;
+  max-width: 100% !important;
   overflow-x: hidden;
+  background-color: #ffffff;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Only cap width and center on desktop (wider than any phone) */
+/* Only cap width and center on desktop */
 @media (min-width: 768px) {
   body {
-    max-width: 430px;
+    width: 430px !important;
+    max-width: 430px !important;
     margin: 0 auto !important;
   }
 }
 
 /* ---- Photos ---- */
 .photo-block {
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   line-height: 0;
   margin: 0;
   padding: 0;
+  display: block;
 }
 
-/* Spacing between photos — use margin on the block, NOT padding on img */
-.photo-block.gap-top  { margin-top: 30px; }
+.photo-block.gap-top    { margin-top: 30px; }
 .photo-block.gap-bottom { margin-bottom: 15px; }
-.photo-block.gap-both { margin-top: 20px; margin-bottom: 40px; }
+.photo-block.gap-both   { margin-top: 20px; margin-bottom: 40px; }
 
 .wedding-img {
   width: 100%;
   display: block;
   object-fit: cover;
-  /* Never put padding on images — it creates white borders */
   padding: 0 !important;
-  margin: 0;
+  margin: 0 !important;
 }
 
 /* ---- Location section ---- */
@@ -65,8 +66,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
-  background-color: var(--cream);
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  background-color: #ffffff;
+  width: 100%;
 }
 
 .divider-line {
@@ -117,4 +120,5 @@ body {
   letter-spacing: 0.15em;
   color: var(--taupe);
 }
+
 
