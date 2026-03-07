@@ -1,45 +1,63 @@
 /* =============================================
-   Wedding Invite — styles.css
+   Wedding Invite — conviete.css
    ============================================= */
 
 :root {
-  --cream: #ffffff; /*#faf8f6*/
-  --taupe: rgb(145, 144, 144); /*#b5a899*/
-  --deep: rgb(145, 144, 144); /*#6b5c52*/
+  --cream: #ffffff;
+  --taupe: rgb(145, 144, 144);
+  --deep: rgb(145, 144, 144);
   --font-display: 'Cinzel', serif;
-  --font-body: ','Cormorant Garamond serif;
+  --font-body: 'Cormorant Garamond', serif;
 }
 
+/* Hard reset — must come AFTER bootstrap to override it */
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-html, body {
-  background-color: var(--cream);
+html {
+  margin: 0 !important;
+  padding: 0 !important;
   width: 100%;
   overflow-x: hidden;
 }
 
-/* Only cap width and center on desktop */
-@media (min-width: 600px) {
+body {
+  background-color: var(--cream);
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Only cap width and center on desktop (wider than any phone) */
+@media (min-width: 768px) {
   body {
     max-width: 430px;
-    margin: 0 auto;
+    margin: 0 auto !important;
   }
 }
 
 /* ---- Photos ---- */
 .photo-block {
   width: 100%;
-  line-height: 0; /* removes gap below img */
+  line-height: 0;
+  margin: 0;
+  padding: 0;
 }
+
+/* Spacing between photos — use margin on the block, NOT padding on img */
+.photo-block.gap-top  { margin-top: 30px; }
+.photo-block.gap-bottom { margin-bottom: 15px; }
+.photo-block.gap-both { margin-top: 20px; margin-bottom: 40px; }
 
 .wedding-img {
   width: 100%;
   display: block;
   object-fit: cover;
+  /* Never put padding on images — it creates white borders */
+  padding: 0 !important;
+  margin: 0;
 }
 
 /* ---- Location section ---- */
@@ -47,8 +65,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*padding: 2.4rem 1.5rem;*/
-  /*gap: 1rem;*/
+  padding: 0;
   background-color: var(--cream);
 }
 
@@ -91,16 +108,13 @@ html, body {
 }
 
 .map-text {
-  /*font-family: var(--font-body);*/
   font-family: "Fraunces", serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  font-variation-settings:
-    "SOFT" 0,
-    "WONK" 0;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
-  /*text-transform: uppercase;*/
   color: var(--taupe);
 }
+
