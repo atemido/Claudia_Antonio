@@ -18,9 +18,16 @@
 
 html, body {
   background-color: var(--cream);
-  max-width: 430px;   /* phone-width cap on wider screens */
-  margin: 0 auto;
+  width: 100%;
   overflow-x: hidden;
+}
+
+/* Only cap width and center on desktop */
+@media (min-width: 600px) {
+  body {
+    max-width: 430px;
+    margin: 0 auto;
+  }
 }
 
 /* ---- Photos ---- */
