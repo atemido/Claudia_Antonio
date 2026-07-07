@@ -1,0 +1,38 @@
+/* Garante que o html e body ocupam 100% da altura e largura da viewport,
+   e remove margens/padding padrão para evitar scrolls indesejados. */
+html, body {
+  height: 100%;
+  width: 100%; /* Adicionado para garantir que o body ocupe 100% da largura */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* CRÍTICO: Esconde qualquer conteúdo que exceda as dimensões */
+  display: flex; /* Habilita Flexbox no body para centralizar o conteúdo */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  background-color: #f8eee1; /* Cor de fundo para preencher espaços */
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+}
+
+/* Define a altura do carousel para 100% da viewport e a cor de fundo */
+#carouselExampleFade,
+.carousel-inner,
+.carousel-item {
+  height: 100vh; /* 100% da altura da viewport */
+  background-color: #f8eee1; /* Cor de fundo para preencher espaços */
+  /* Importante: Remova quaisquer margens ou paddings do Bootstrap que possam estar afetando esses elementos */
+}
+
+/* Estiliza as imagens dentro do carousel */
+.carousel-item img {
+  height: 100%; /* A imagem tentará ocupar 100% da altura do item */
+  width: 100%; /* A imagem tentará ocupar 100% da largura do item */
+  object-fit: contain; /* Redimensiona a imagem para caber dentro do container, mantendo o aspeto e preenchendo o espaço restante */
+  display: block; /* Garante que a imagem é um bloco */
+  margin: auto; /* Centraliza a imagem horizontal e verticalmente se houver espaço */
+}
+
+/*Setas ficam pretas*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
